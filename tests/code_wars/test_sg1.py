@@ -49,13 +49,3 @@ class TestDialHomeDevice(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-#
-# def test_dial_home_device_route_no_route():
-#     map = """.S...
-# XXXXX
-# .X.XX
-# ..X..
-# G...X"""
-#     expected_route = "Oh for crying out loud..."
-#     assert dial_home_device.dial_home() == expected_route
