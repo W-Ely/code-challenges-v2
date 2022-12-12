@@ -85,3 +85,9 @@ class Gate:
             if neighbor:
                 neighbor.connections.add(self)
                 self.connections.add(neighbor)
+
+
+def wire_DHD_SG1(existing_wires):  # pylint: disable=invalid-name
+    """Code Wars entry point"""
+    dhd = DialHomeDevice(existing_wires)
+    return dhd.dial_home()

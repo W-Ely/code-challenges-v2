@@ -1,6 +1,6 @@
 import unittest
 
-from src.code_wars.sg1 import DialHomeDevice
+from src.code_wars.sg1 import DialHomeDevice, wire_DHD_SG1
 
 
 class TestDialHomeDevice(unittest.TestCase):
@@ -45,6 +45,11 @@ class TestDialHomeDevice(unittest.TestCase):
         expected_route = "Oh for crying out loud..."
         dial_home_device = DialHomeDevice(galactic_map)
         self.assertEqual(dial_home_device.dial_home(), expected_route)
+
+    def test_code_wars_entry_point(self):
+        galactic_map = ".S...\nXXX..\n.X.XX\n..X..\nG...X"
+        expected_route = ".SP..\nXXXP.\n.XPXX\n.PX..\nG...X"
+        self.assertEqual(wire_DHD_SG1(galactic_map), expected_route)
 
 
 if __name__ == "__main__":
