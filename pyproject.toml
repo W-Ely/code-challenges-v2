@@ -1,0 +1,51 @@
+[tool.black]
+line-length = 88
+
+[tool.pylint.messages_control]
+disable = [
+    "unnecessary-pass",
+    "len-as-condition",
+    "fixme",
+    "too-few-public-methods",
+    "no-else-return",
+    "bad-continuation",
+    "logging-fstring-interpolation",
+    "logging-format-interpolation",
+    "missing-docstring",
+    "import-error",
+    "no-name-in-module",
+    "duplicate-code",
+    "use-implicit-booleaness-not-comparison"
+]
+ignored-classes = ["scoped_session", "Session"]
+generated-members = ["zlib.decompress", "zlib.compressobj"]
+
+[tool.pylint.format]
+max-line-length = 88
+max-module-lines = 1000
+
+[tool.pylint.similarities]
+ignore-comments = "yes"
+ignore-docstrings = "yes"
+ignore-imports = "yes"
+min-similarity-lines = 15
+
+[tool.pylint.basic]
+good-names = ["i", "j", "k", "x", "y", "z", "f", "ex", "id", "ec", "pt", "_"]
+
+[tool.pylint.design]
+max-args = 7
+max-attributes = 7
+max-bool-expr = 5
+max-branches = 12
+max-locals = 15
+max-parents = 7
+max-public-methods = 20
+max-returns = 6
+max-statements = 50
+
+[tool.pytest.ini_options]
+junit_family = "xunit2"
+testpaths = ["tests"]
+log_level = "ERROR" # DEBUG or INFO logs are set in conftest.py LOG_LEVEL
+addopts = "--strict-markers"
