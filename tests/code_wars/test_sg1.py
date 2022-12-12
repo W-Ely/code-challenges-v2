@@ -148,10 +148,7 @@ PXX..X.XX
 P.XX..XX.
 .PXX.X.XG
 ..PPPPPPX"""
-        print("\n" + galactic_map)
-        print("\n" + expected_route)
         dial_home_device = DialHomeDevice(galactic_map)
-        print("\n" + dial_home_device.dial_home())
         self.assertEqual(dial_home_device.dial_home(), expected_route)
 
     def test_code_wars_entry_point(self):

@@ -96,11 +96,7 @@ class Gate:
             x, y = x + i, y + j
             if x < 0 or x > max_x or y < 0 or y > max_y:
                 continue
-            try:
-                neighbor = galactic_gates[y][x]
-            except:
-                print(x, y)
-                raise
+            neighbor = galactic_gates[y][x]
             if neighbor:
                 neighbor.connections.add(self)
                 self.connections.add(neighbor)
