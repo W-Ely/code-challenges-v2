@@ -38,11 +38,13 @@ pylint src tests
 - Import arrangment by [isort](https://pypi.org/project/isort/)
 ```sh
 isort src tests
-``` 
+```
 
 ### Challenges
 #### Code Wars
 - - Challenge: [Stargate SG-1: Cute and Fuzzy](https://www.codewars.com/kata/59669eba1b229e32a300001a/train/python)
   - Location: [./src/code_wars/sg1.py](./src/code_wars/sg1.py)
   - Strategy: Create a graph and use a breadth first search to find a possible route.
-  - Resources: [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
+  - Resources:
+  - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
+    - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)

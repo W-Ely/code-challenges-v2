@@ -1,8 +1,10 @@
-from queue import Queue
+import math
+from queue import PriorityQueue
 
 
 class DialHomeDevice:
     def __init__(self, galactic_map):
+        extra_hop_margin = 2
         self.start, self.goal = None, None
         self._galactic_gates = [
             [self._create_gate(x, y, gate) for x, gate in enumerate(gates)]
@@ -24,23 +26,30 @@ class DialHomeDevice:
         for gates in self._galactic_gates:
             for gate in gates:
                 if gate:
-                    gate.connect(self._galactic_gates)
+                    gate.connect(self._galactic_gates, self.goal)
 
     def dial_home(self):
-        queue = Queue()
-        queue.put((self.start, []))
-        visited = set()
+        queue = PriorityQueue()
+        queue.put((0, self.start, []))
+        visited = {}
+        visited[self.start] = 0
+        shortest_route = None
+        shortest_distance = math.inf
         while queue.qsize() > 0:
-            current, route = queue.get_nowait()
-            visited.add(current)
+            previous_distance, current, route = queue.get_nowait()
             for gate in current.connections:
+                distance = previous_distance + math.dist(gate.location, current.location)
                 if gate == self.goal:
-                    return self._route(route)
+                    if distance < shortest_distance:
+                        shortest_route = route
+                        shortest_distance = distance
                 else:
-                    if gate not in visited:
-                        visited.add(gate)
-                        queue.put((gate, route + [gate]))
-
+                    visited_distance = visited.get(gate, math.inf)
+                    if visited_distance > distance:
+                        queue.put((distance, gate, route + [gate]))
+                        visited[gate] = distance
+        if shortest_distance < math.inf:
+            return self._route(shortest_route)
         return "Oh for crying out loud..."
 
     def _route(self, route):
@@ -61,7 +70,8 @@ class DialHomeDevice:
 class Gate:
     def __init__(self, x, y):
         self.location = x, y
-        self.connections = []
+        self.connections = set()
+        self.distance_from_goal = None
 
     def __hash__(self):
         return hash(self.location)
@@ -69,8 +79,12 @@ class Gate:
     def __eq__(self, other_gate):
         return self.location == other_gate.location
 
-    def connect(self, galactic_gates):  # pylint: disable=C0103
-        up, down = (0, 1), (0, -1)  # pylint: disable=C0103
+    def __lt__(self, other_gate):
+        return self.distance_from_goal < other_gate.distance_from_goal
+
+    def connect(self, galactic_gates, goal):
+        self.distance_from_goal = math.dist(self.location, goal.location)
+        up, down = (0, 1), (0, -1)  # pylint: disable=
         left, right = (-1, 0), (1, 0)
         up_left, up_right = (-1, 1), (1, 1)
         down_left, down_right = (-1, -1), (1, -1)
@@ -81,11 +95,14 @@ class Gate:
             x, y = x + i, y + j
             if x < 0 or x > max_x or y < 0 or y > max_y:
                 continue
-            neighbor = galactic_gates[y][x]
+            try:
+                neighbor = galactic_gates[y][x]
+            except:
+                print(x, y)
+                raise
             if neighbor:
-                if self not in neighbor.connections:
-                    neighbor.connections.append(self)
-                self.connections.append(neighbor)
+                neighbor.connections.add(self)
+                self.connections.add(neighbor)
 
 
 def wire_DHD_SG1(existing_wires):  # pylint: disable=invalid-name
