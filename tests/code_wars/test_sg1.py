@@ -12,7 +12,7 @@ class TestDialHomeDevice(unittest.TestCase):
 
     def test_dial_home__3x3_1(self):
         galactic_map = ".S.\n...\n.G."
-        expected_route = ".S.\nP..\n.G."
+        expected_route = ".S.\n.P.\n.G."
         dial_home_device = DialHomeDevice(galactic_map)
         self.assertEqual(dial_home_device.dial_home(), expected_route)
 
@@ -30,17 +30,17 @@ class TestDialHomeDevice(unittest.TestCase):
 
     def test_dial_home__4x4_1(self):
         galactic_map = "S...\n....\n....\nG..."
-        expected_route = "S...\nP...\n.P..\nG..."
+        expected_route = "S...\nP...\nP...\nG..."
         dial_home_device = DialHomeDevice(galactic_map)
         self.assertEqual(dial_home_device.dial_home(), expected_route)
 
-    def test_dial_home_5x5_1(self):
+    def test_dial_home__5x5_1(self):
         galactic_map = ".S...\nXXX..\n.X.XX\n..X..\nG...X"
         expected_route = ".SP..\nXXXP.\n.XPXX\n.PX..\nG...X"
         dial_home_device = DialHomeDevice(galactic_map)
         self.assertEqual(dial_home_device.dial_home(), expected_route)
 
-    def test_dial_home_5x5_no_route(self):
+    def test_dial_home__5x5_no_route(self):
         galactic_map = ".S...\nXXX..\n.XXXX\n..X..\nG...X"
         expected_route = "Oh for crying out loud..."
         dial_home_device = DialHomeDevice(galactic_map)

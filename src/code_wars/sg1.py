@@ -61,7 +61,7 @@ class DialHomeDevice:
 class Gate:
     def __init__(self, x, y):
         self.location = x, y
-        self.connections = set()
+        self.connections = []
 
     def __hash__(self):
         return hash(self.location)
@@ -74,7 +74,7 @@ class Gate:
         left, right = (-1, 0), (1, 0)
         up_left, up_right = (-1, 1), (1, 1)
         down_left, down_right = (-1, -1), (1, -1)
-        directions = (up, up_left, up_right, left, right, down, down_left, down_right)
+        directions = (up, left, right, down, up_left, up_right, down_left, down_right)
         max_x, max_y = len(galactic_gates[0]) - 1, len(galactic_gates) - 1
         for i, j in directions:
             x, y = self.location
@@ -83,8 +83,9 @@ class Gate:
                 continue
             neighbor = galactic_gates[y][x]
             if neighbor:
-                neighbor.connections.add(self)
-                self.connections.add(neighbor)
+                if self not in neighbor.connections:
+                    neighbor.connections.append(self)
+                self.connections.append(neighbor)
 
 
 def wire_DHD_SG1(existing_wires):  # pylint: disable=invalid-name
