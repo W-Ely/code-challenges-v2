@@ -4,7 +4,6 @@ from queue import PriorityQueue
 
 class DialHomeDevice:
     def __init__(self, galactic_map):
-        extra_hop_margin = 2
         self.start, self.goal = None, None
         self._galactic_gates = [
             [self._create_gate(x, y, gate) for x, gate in enumerate(gates)]
@@ -38,7 +37,9 @@ class DialHomeDevice:
         while queue.qsize() > 0:
             previous_distance, current, route = queue.get_nowait()
             for gate in current.connections:
-                distance = previous_distance + math.dist(gate.location, current.location)
+                distance = previous_distance + math.dist(
+                    gate.location, current.location
+                )
                 if gate == self.goal:
                     if distance < shortest_distance:
                         shortest_route = route
@@ -84,7 +85,7 @@ class Gate:
 
     def connect(self, galactic_gates, goal):
         self.distance_from_goal = math.dist(self.location, goal.location)
-        up, down = (0, 1), (0, -1)  # pylint: disable=
+        up, down = (0, 1), (0, -1)  # pylint: disable=invalid-name
         left, right = (-1, 0), (1, 0)
         up_left, up_right = (-1, 1), (1, 1)
         down_left, down_right = (-1, -1), (1, -1)

@@ -86,7 +86,6 @@ XXXXXXGXP.
         galactic_map = "S" + "\n".join(["." * 100 for _ in range(100)])[1:10098] + "G"
         expected_route = []
         for i in range(100):
-            row = ("." * i) + "P" + ("." * (99 - i))
             expected_route.append(("." * i) + "P" + ("." * (99 - i)))
         expected_route = "S" + "\n".join(expected_route)[1:10098] + "G"
         dial_home_device = DialHomeDevice(galactic_map)
