@@ -7,8 +7,8 @@ disable = [
     "len-as-condition",
     "fixme",
     "too-few-public-methods",
+    "too-many-locals",
     "no-else-return",
-    "bad-continuation",
     "logging-fstring-interpolation",
     "logging-format-interpolation",
     "missing-docstring",
@@ -31,7 +31,7 @@ ignore-imports = "yes"
 min-similarity-lines = 15
 
 [tool.pylint.basic]
-good-names = ["i", "j", "k", "x", "y", "z", "f", "ex", "id", "ec", "pt", "_"]
+good-names = ["i", "j", "k", "x", "y", "z", "f", "ex", "ec", "pt", "_"]
 
 [tool.pylint.design]
 max-args = 7

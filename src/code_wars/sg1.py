@@ -10,13 +10,13 @@ class DialHomeDevice:
         ]
         self._set_connections()
 
-    def _create_gate(self, x, y, property):
-        if property == "X":
+    def _create_gate(self, x, y, gate_key):
+        if gate_key == "X":
             return None
-        gate = Gate(x, y, property)
-        if property == "S":
+        gate = Gate(x, y)
+        if gate_key == "S":
             self.start = gate
-        elif property == "G":
+        elif gate_key == "G":
             self.goal = gate
         return gate
 
@@ -24,7 +24,7 @@ class DialHomeDevice:
         for gates in self._galactic_gates:
             for gate in gates:
                 if gate:
-                    gate.connect(self._galactic_gates, self)
+                    gate.connect(self._galactic_gates)
 
     def dial_home(self):
         queue = Queue()
@@ -45,22 +45,22 @@ class DialHomeDevice:
 
     def _route(self, route):
         map_key = {None: "X", self.start: "S", self.goal: "G"}
-        return "\n".join([
-            "".join(
-                [
-                    "P" if gate and gate in route else map_key.get(gate, ".")
-                    for gate in gates
-                ]
-            )
-            for gates in self._galactic_gates
-        ])
+        return "\n".join(
+            [
+                "".join(
+                    [
+                        "P" if gate and gate in route else map_key.get(gate, ".")
+                        for gate in gates
+                    ]
+                )
+                for gates in self._galactic_gates
+            ]
+        )
 
 
 class Gate:
-    def __init__(self, x, y, gate):
+    def __init__(self, x, y):
         self.location = x, y
-        self.dead_end = gate == "X"
-        self.name = gate
         self.connections = set()
 
     def __hash__(self):
@@ -69,21 +69,16 @@ class Gate:
     def __eq__(self, other_gate):
         return self.location == other_gate.location
 
-    def connect(self, galactic_gates, dial_home_device):
-        if self.dead_end:
-            return
-        up, down, left, right = (0, 1), (0, -1), (-1, 0), (1, 0)
+    def connect(self, galactic_gates):  # pylint: disable=C0103
+        up, down = (0, 1), (0, -1)  # pylint: disable=C0103
+        left, right = (-1, 0), (1, 0)
         up_left, up_right = (-1, 1), (1, 1)
         down_left, down_right = (-1, -1), (1, -1)
-        directions = (
-            up, up_left, up_right, left, right, down, down_left, down_right
-        )
-        max_x = len(galactic_gates[0]) - 1
-        max_y = len(galactic_gates) - 1
+        directions = (up, up_left, up_right, left, right, down, down_left, down_right)
+        max_x, max_y = len(galactic_gates[0]) - 1, len(galactic_gates) - 1
         for i, j in directions:
             x, y = self.location
-            x = x + i
-            y = y + j
+            x, y = x + i, y + j
             if x < 0 or x > max_x or y < 0 or y > max_y:
                 continue
             neighbor = galactic_gates[y][x]

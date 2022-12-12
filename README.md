@@ -27,9 +27,18 @@ python -m unittest
 ```
 
 ### Linting
-Autoformating is handled with [black](https://pypi.org/project/black/)
-Linting by [pylint](https://pypi.org/project/pylint/)
-Import arrangment by [isort](https://pypi.org/project/isort/)
+- Autoformating is handled with [black](https://pypi.org/project/black/)
+```sh
+black src tests
+```
+- Linting by [pylint](https://pypi.org/project/pylint/)
+```sh
+pylint src tests
+```
+- Import arrangment by [isort](https://pypi.org/project/isort/)
+```sh
+isort src tests
+``` 
 
 ### Challenges
 #### Code Wars
