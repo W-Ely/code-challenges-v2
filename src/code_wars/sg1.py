@@ -74,6 +74,10 @@ class Gate:
         self.connections = set()
         self.distance_from_goal = None
 
+    def __repr__(self):
+        x, y = self.location
+        return f"Gate({x}, {y})"
+
     def __hash__(self):
         return hash(self.location)
 
