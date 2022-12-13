@@ -239,16 +239,16 @@ class TestGate(unittest.TestCase):
         self.assertEqual(f"{gate}", f"Gate({x}, {y})")
 
     def test_gate__hash__(self):
-        connections = set([Gate(0,0)])
-        self.assertIn(Gate(0,0), connections)
+        connections = set([Gate(0, 0)])
+        self.assertIn(Gate(0, 0), connections)
 
     def test_gate__eq__(self):
         self.assertEqual(Gate(0, 0), Gate(0, 0))
 
     def test_gate__lt__(self):
-        gate1 = Gate(0,0)
+        gate1 = Gate(0, 0)
         gate1.distance_from_goal = 1
-        gate2 = Gate(0,1)
+        gate2 = Gate(0, 1)
         gate2.distance_from_goal = 2
         self.assertLess(gate1, gate2)
 
@@ -261,7 +261,9 @@ class TestGate(unittest.TestCase):
         gate = galactic_gates[0][1]
         goal = galactic_gates[1][0]
         gate.connect(galactic_gates, goal)
-        self.assertEqual(gate.connections, set([galactic_gates[1][0], galactic_gates[1][1]]))
+        self.assertEqual(
+            gate.connections, set([galactic_gates[1][0], galactic_gates[1][1]])
+        )
         self.assertEqual(gate.distance_from_goal, 1.4142135623730951)
 
 
