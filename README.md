@@ -42,3 +42,5 @@ isort src tests
 
 ### Challenges
 #### Code Wars
+
+https://www.codewars.com/kata/5a96064cfd57777828000187/train/python
