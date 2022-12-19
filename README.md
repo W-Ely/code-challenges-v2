@@ -1,7 +1,7 @@
 # Code Challenges
 A new collection of my personal solutions to various code challenges.
 ### Setup
-This repo implements solutions in Python 3.8+.  It's recommended to run and install dependencies from a virtual environment.
+This repo implements solutions in Python 3.10+.  It's recommended to run and install dependencies from a virtual environment.
 
 After cloning this repo:
 ```sh
@@ -42,5 +42,17 @@ isort src tests
 
 ### Challenges
 #### Code Wars
+- - Challenge: [Switch the Bulb--Play game Series #10](https://www.codewars.com/kata/5a96064cfd57777828000187/train/python)
+  - Location: [./src/code_wars/switch_the_bulbs.py](./src/code_wars/switch_the_bulbs.py)
+  - Strategy: Create a graph and use a depth first search to find a possible route.
+  - Resources:
+  - - [Depth-first_search](https://en.wikipedia.org/wiki/Depth-first_search)
+    - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
+    - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 
-https://www.codewars.com/kata/5a96064cfd57777828000187/train/python
+
+
+
+### Notes
+- The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
+- The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
