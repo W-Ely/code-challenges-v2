@@ -45,7 +45,7 @@ isort src tests
 - - Challenge: [Next bigger number with the same digits](https://www.codewars.com/kata/55983863da40caa2c900004e/train/python)
   - Location: [./src/code_wars/next_bigger_number.py](./src/code_wars/next_bigger_number.py)
   - Strategy:
-    1. From right to left find first number with larger number to the left.
-    1. Find the smallest number to the right of this numebr that is large than this number.
-    1. Switch the two numbers.
-    1. Sort the numbers to the right of the first.
+    1. Moving from right to left find first number with a larger number to the right.
+    1. Next find the smallest number to the right of this number that is also large than this number.
+    1. Then switch these two numbers.
+    1. Sort all the numbers to the right of the left number.
