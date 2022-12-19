@@ -7,7 +7,7 @@ from src.code_wars.next_bigger_number import (
 )
 
 
-class TestDialHomeDeviceFunctional(unittest.TestCase):
+class TestNextBiggerNumber(unittest.TestCase):
     def test_find_i_of_n_with_larger_m_to_right(self):
         cases = (
             (1000, None),
