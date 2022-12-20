@@ -248,7 +248,7 @@ GAME_MAPS_NO_SOLUTION = [
     + "+--------+",
 ]
 
-GAME_MAPS_EXTREAM = [
+GAME_MAPS_EXTREME = [
     "+------------------------+\n"
     + "|BBBBBBBBBBBBBBBBBBBBBBBB|\n"
     + "|BBBBBBBBBBBBBBBBBBBBBBBB|\n"
@@ -343,7 +343,7 @@ class TestSwitchTheBulbs(unittest.TestCase):
                 self.assertEqual(len(actual), len(board.bulbs))
 
     def test_switch_bulbs_extream(self):
-        for game_map in GAME_MAPS_EXTREAM:
+        for game_map in GAME_MAPS_EXTREME:
             with self.subTest(f"{game_map} --> Should have solution"):
                 board = Board(game_map)
                 actual = board.switch_bulbs()
