@@ -42,3 +42,5 @@ isort src tests
 
 ### Challenges
 #### Code Wars
+- - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
+  - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
