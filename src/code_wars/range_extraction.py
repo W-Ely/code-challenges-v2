@@ -7,6 +7,7 @@ def should_append_range(i, j, numbers):
 
 
 def solution(numbers):
+    """Code Wars entry point"""
     formatted = []
     i = 0
     while i < len(numbers):
