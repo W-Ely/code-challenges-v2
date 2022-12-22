@@ -42,3 +42,7 @@ isort src tests
 
 ### Challenges
 #### Code Wars
+
+#### LeetCode
+- - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
+  - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
