@@ -58,3 +58,7 @@ isort src tests
 #### Codecademy
 - - Challenge: [The Knapsack Problem](https://www.codecademy.com/code-challenges/code-challenge-knapsack-problem-python)
   - Location: [./src/codecademy/the_knapsack_problem.py](./src/codecademy/the_knapsack_problem.py)
+  - Resources:
+  - - [Dynamic Programming](https://en.wikipedia.org//wiki/Dynamic_programming)
+    - [Geeks for Geeks - Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/)
+    - [Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People, Chapter 9](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
