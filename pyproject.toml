@@ -49,3 +49,6 @@ junit_family = "xunit2"
 testpaths = ["tests"]
 log_level = "ERROR" # DEBUG or INFO logs are set in conftest.py LOG_LEVEL
 addopts = "--strict-markers"
+
+[tool.isort]
+profile = "black"

@@ -42,6 +42,13 @@ isort src tests
 
 ### Challenges
 #### Code Wars
+- - Challenge: [Next bigger number with the same digits](https://www.codewars.com/kata/55983863da40caa2c900004e/train/python)
+  - Location: [./src/code_wars/next_bigger_number.py](./src/code_wars/next_bigger_number.py)
+  - Strategy:
+    1. Moving from right to left find first number with a larger number to the right.
+    1. Next find the smallest number to the right of this number that is also large than this number.
+    1. Then switch these two numbers.
+    1. Sort all the numbers to the right of the left number.
 - - Challenge: [Stargate SG-1: Cute and Fuzzy](https://www.codewars.com/kata/59669eba1b229e32a300001a/train/python)
   - Location: [./src/code_wars/sg1.py](./src/code_wars/sg1.py)
   - Strategy: Create a graph and use a breadth first search to find a possible route.
