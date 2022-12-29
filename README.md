@@ -55,3 +55,6 @@ isort src tests
   - Resources:
   - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
     - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
+#### Codecademy
+- - Challenge: [The Knapsack Problem](https://www.codecademy.com/code-challenges/code-challenge-knapsack-problem-python)
+  - Location: [./src/codecademy/the_knapsack_problem.py](./src/codecademy/the_knapsack_problem.py)
