@@ -49,3 +49,9 @@ isort src tests
     1. Next find the smallest number to the right of this number that is also large than this number.
     1. Then switch these two numbers.
     1. Sort all the numbers to the right of the left number.
+- - Challenge: [Stargate SG-1: Cute and Fuzzy](https://www.codewars.com/kata/59669eba1b229e32a300001a/train/python)
+  - Location: [./src/code_wars/sg1.py](./src/code_wars/sg1.py)
+  - Strategy: Create a graph and use a breadth first search to find a possible route.
+  - Resources:
+  - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
+    - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
