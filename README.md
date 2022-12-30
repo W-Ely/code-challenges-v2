@@ -55,3 +55,6 @@ isort src tests
   - Resources:
   - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
     - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
+#### edabit
+- - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
+  - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
