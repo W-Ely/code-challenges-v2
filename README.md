@@ -55,3 +55,6 @@ isort src tests
   - Resources:
   - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
     - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
+#### edabit
+- - Challenge: [Longest Alternating Substring](https://edabit.com/challenge/RB6iWFrCd6rXWH3vi)
+  - Location: [./src/edabit/longest_alternating_substring.py](./src/edabit/longest_alternating_substring.py)
