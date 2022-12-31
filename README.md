@@ -1,7 +1,7 @@
 # Code Challenges
 A new collection of my personal solutions to various code challenges.
 ### Setup
-This repo implements solutions in Python 3.8+.  It's recommended to run and install dependencies from a virtual environment.
+This repo implements solutions in Python 3.10+.  It's recommended to run and install dependencies from a virtual environment.
 
 After cloning this repo:
 ```sh
@@ -42,6 +42,12 @@ isort src tests
 
 ### Challenges
 #### Code Wars
+- - Challenge: [Stargate SG-1: Cute and Fuzzy](https://www.codewars.com/kata/59669eba1b229e32a300001a/train/python)
+  - Location: [./src/code_wars/sg1.py](./src/code_wars/sg1.py)
+  - Strategy: Create a graph and use a breadth first search to find a possible route.
+  - Resources:
+  - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
+    - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
 - - Challenge: [Next bigger number with the same digits](https://www.codewars.com/kata/55983863da40caa2c900004e/train/python)
   - Location: [./src/code_wars/next_bigger_number.py](./src/code_wars/next_bigger_number.py)
   - Strategy:
@@ -49,12 +55,13 @@ isort src tests
     1. Next find the smallest number to the right of this number that is also large than this number.
     1. Then switch these two numbers.
     1. Sort all the numbers to the right of the left number.
-- - Challenge: [Stargate SG-1: Cute and Fuzzy](https://www.codewars.com/kata/59669eba1b229e32a300001a/train/python)
-  - Location: [./src/code_wars/sg1.py](./src/code_wars/sg1.py)
-  - Strategy: Create a graph and use a breadth first search to find a possible route.
+- - Challenge: [Switch the Bulb--Play game Series #10](https://www.codewars.com/kata/5a96064cfd57777828000187/train/python)
+  - Location: [./src/code_wars/switch_the_bulbs.py](./src/code_wars/switch_the_bulbs.py)
+  - Strategy: Create a graph and use a depth first search to find a possible route.
   - Resources:
-  - - [Breadth-first_search](https://en.wikipedia.org/wiki/Breadth-first_search)
+  - - [Depth-first_search](https://en.wikipedia.org/wiki/Depth-first_search)
     - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
+    - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 #### Codecademy
 - - Challenge: [The Knapsack Problem](https://www.codecademy.com/code-challenges/code-challenge-knapsack-problem-python)
   - Location: [./src/codecademy/the_knapsack_problem.py](./src/codecademy/the_knapsack_problem.py)
@@ -63,3 +70,6 @@ isort src tests
     - [Wikipedia - Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)
     - [Geeks for Geeks - Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/)
     - [Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People, Chapter 9](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
+### Notes
+- The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
+- The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
