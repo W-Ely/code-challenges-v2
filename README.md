@@ -65,6 +65,8 @@ isort src tests
 #### edabit
 - - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
   - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
+- - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
+  - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
