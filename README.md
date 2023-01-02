@@ -65,6 +65,8 @@ isort src tests
 #### edabit
 - - Challenge: [Longest Alternating Substring](https://edabit.com/challenge/RB6iWFrCd6rXWH3vi)
   - Location: [./src/edabit/longest_alternating_substring.py](./src/edabit/longest_alternating_substring.py)
+- - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
+  - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
