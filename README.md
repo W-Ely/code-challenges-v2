@@ -62,6 +62,8 @@ isort src tests
   - - [Depth-first_search](https://en.wikipedia.org/wiki/Depth-first_search)
     - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
     - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+- - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
+  - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
 #### LeetCode
 - - Challenge: [Min Window Substring](https://leetcode.com/problems/minimum-window-substring/)
   - Location: [./src/leet_code/min_window_substring.py](./src/leet_code/min_window_substring.py)
