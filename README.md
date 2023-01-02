@@ -62,6 +62,9 @@ isort src tests
   - - [Depth-first_search](https://en.wikipedia.org/wiki/Depth-first_search)
     - [Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
     - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+#### edabit
+- - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
+  - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
 - - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
   - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
 ### Notes
