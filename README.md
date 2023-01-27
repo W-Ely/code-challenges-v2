@@ -64,6 +64,9 @@ isort src tests
     - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 - - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
   - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
+#### LeetCode
+- - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
+  - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
