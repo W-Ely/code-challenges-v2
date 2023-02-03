@@ -72,6 +72,9 @@ isort src tests
     - [Wikipedia - Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)
     - [Geeks for Geeks - Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/)
     - [Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People, Chapter 9](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
+#### LeetCode
+- - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
+  - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
