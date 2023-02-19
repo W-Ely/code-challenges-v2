@@ -75,6 +75,8 @@ isort src tests
 #### LeetCode
 - - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
   - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
+- - Challenge: [Min Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+  - Location: [./src/leet_code/min_window_substring.py](./src/leet_code/min_window_substring.py)
 #### edabit
 - - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
   - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
