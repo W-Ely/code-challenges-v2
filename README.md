@@ -75,6 +75,9 @@ isort src tests
 #### LeetCode
 - - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
   - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
+#### edabit
+- - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
+  - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
