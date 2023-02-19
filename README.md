@@ -64,9 +64,22 @@ isort src tests
     - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 - - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
   - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
+#### Codecademy
+- - Challenge: [The Knapsack Problem](https://www.codecademy.com/code-challenges/code-challenge-knapsack-problem-python)
+  - Location: [./src/codecademy/the_knapsack_problem.py](./src/codecademy/the_knapsack_problem.py)
+  - Resources:
+  - - [Wikipedia - Dynamic Programming](https://en.wikipedia.org//wiki/Dynamic_programming)
+    - [Wikipedia - Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)
+    - [Geeks for Geeks - Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/)
+    - [Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People, Chapter 9](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
 #### LeetCode
+- - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
+  - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
 - - Challenge: [Min Window Substring](https://leetcode.com/problems/minimum-window-substring/)
   - Location: [./src/leet_code/min_window_substring.py](./src/leet_code/min_window_substring.py)
+#### edabit
+- - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
+  - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
