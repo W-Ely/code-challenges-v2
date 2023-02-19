@@ -78,6 +78,8 @@ isort src tests
 #### edabit
 - - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
   - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
+- - Challenge: [Longest Alternating Substring](https://edabit.com/challenge/RB6iWFrCd6rXWH3vi)
+  - Location: [./src/edabit/longest_alternating_substring.py](./src/edabit/longest_alternating_substring.py)
 ### Notes
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
