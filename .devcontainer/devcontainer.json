@@ -1,0 +1,39 @@
+{
+  "name": "Code Challenges Dev",
+  "context": "..",
+  "dockerFile": "../Dockerfile.dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.makefile-tools",
+        "esbenp.prettier-vscode",
+        "ms-python.isort",
+        "dbaeumer.vscode-eslint",
+        "ms-python.python"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "python/.venv/bin/python",
+        "python.pythonPath": "python/.venv/bin/python",
+        "python.envFile": "python/.env",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintUseMinimalCheckers": false,
+        "python.linting.pylintArgs": [
+          "--rcfile",
+          "python/pyproject.toml"
+        ],
+        "python.formatting.blackPath": "python/.venv/bin/black",
+        "python.linting.pylintPath": "python/.venv/bin/pylint",
+        "python.formatting.provider": "black",
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "files.trimTrailingWhitespace": true,
+        "isort.check": true,
+        "isort.importStrategy": "fromEnvironment",
+        "isort.path": ["python/.venv/bin/isort"]
+      }
+    }
+  },
+  "postStartCommand": "make dev"
+}

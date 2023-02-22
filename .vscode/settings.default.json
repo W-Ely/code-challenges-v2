@@ -1,0 +1,18 @@
+{
+  "python.defaultInterpreterPath": "python/.venv/bin/python",
+  "python.pythonPath": "python/.venv/bin/python",
+  "python.envFile": "python/.env",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintUseMinimalCheckers": false,
+  "python.formatting.blackPath": "python/.venv/bin/black",
+  "python.linting.pylintPath": "python/.venv/bin/pylint",
+  "python.formatting.provider": "black",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "files.trimTrailingWhitespace": true,
+  "isort.check": true,
+  "isort.importStrategy": "fromEnvironment",
+  "isort.path": ["python/.venv/bin/isort"]
+}

@@ -1,5 +1,4 @@
 class Solution:
-
     def _zig(self, i, num_rows):
         if ((i - 1) // (num_rows - 1)) % 2 == 0:
             return ((i - 1) % (num_rows - 1)) + 1
