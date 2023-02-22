@@ -1,12 +1,9 @@
 .PHONY=help clean code lint test dev
 
-script-directory := scripts
 src-directory := src
 test-directory := tests
 src-files := $(shell find $(src-directory) -name '*.py' -not \( -path '*__pycache__*' \))
 test-files := $(shell find $(test-directory) -name '*.py' -not \( -path '*__pycache__*' \))
-script-files := $(shell find $(script-directory) -name '*.sh')
-config-files := 
 
 VENV=. .venv/bin/activate
 
@@ -29,7 +26,7 @@ clean: ## clean dev artifacts
 
 dev: .dev ## Setup dev environment
 
-.test: .dev pyproject.toml $(src-files) $(test-files) $(script-files) Makefile
+.test: .dev pyproject.toml $(src-files) $(test-files) Makefile
 	$(VENV) && coverage run -m unittest && coverage report
 	touch .test
 

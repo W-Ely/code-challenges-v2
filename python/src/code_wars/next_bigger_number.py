@@ -36,3 +36,5 @@ def next_bigger(n):
     numbers[i], numbers[j] = numbers[j], numbers[i]
     numbers = [str(n) for n in numbers[: i + 1] + sorted(numbers[i + 1 :])]
     return int("".join(numbers))
+
+

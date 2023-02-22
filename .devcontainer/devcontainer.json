@@ -13,11 +13,9 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "python/.venv/bin/python",
-        "python.pythonPath": "python/.venv/bin/python",
         "python.envFile": "python/.env",
         "python.linting.enabled": true,
         "python.linting.pylintEnabled": true,
-        "python.linting.pylintUseMinimalCheckers": false,
         "python.linting.pylintArgs": [
           "--rcfile",
           "python/pyproject.toml"

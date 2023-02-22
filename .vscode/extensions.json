@@ -3,6 +3,7 @@
     "ms-vscode.makefile-tools",
     "esbenp.prettier-vscode",
     "ms-python.isort",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
   ]
 }
