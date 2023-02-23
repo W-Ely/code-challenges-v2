@@ -12,6 +12,8 @@ disable = [
     "logging-fstring-interpolation",
     "logging-format-interpolation",
     "missing-docstring",
+    "missing-module-docstring",
+    "missing-function-docstring",
     "import-error",
     "no-name-in-module",
     "duplicate-code",
@@ -52,3 +54,6 @@ addopts = "--strict-markers"
 
 [tool.isort]
 profile = "black"
+
+[tool.coverage.run]
+source = ["src"]

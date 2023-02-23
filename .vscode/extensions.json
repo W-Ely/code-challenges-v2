@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ms-vscode.makefile-tools",
+    "esbenp.prettier-vscode",
+    "ms-python.isort",
+    "dbaeumer.vscode-eslint",
+    "ms-python.python",
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/python/.venv/bin/python",
+  "python.envFile": "${workspaceFolder}/python/.env",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--rcfile",
+    "${workspaceFolder}/python/pyproject.toml"
+  ],
+  "python.formatting.blackPath": "${workspaceFolder}/python/.venv/bin/black",
+  "python.linting.pylintPath": "${workspaceFolder}/python/.venv/bin/pylint",
+  "python.formatting.provider": "black",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "files.trimTrailingWhitespace": true,
+  "isort.check": true,
+  "isort.importStrategy": "fromEnvironment",
+  "isort.path": ["${workspaceFolder}/python/.venv/bin/isort"]
+}
