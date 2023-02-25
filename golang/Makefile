@@ -1,5 +1,9 @@
 .PHONY=help clean code lint test dev
 
+src-directory := src
+src-files := $(shell find $(src-directory) -name '*.go')
+
+
 all: help
 
 help:
@@ -8,9 +12,9 @@ help:
 
 clean: ## clean dev artifacts
 
-dev:  ## Setup dev environment
-	cd python && $(MAKE) dev
 
-test:  ## Run tests
-	cd python && $(MAKE) test
-	cd golang && $(MAKE) test
+.test: $(src-files) $(test-files) Makefile
+	go test ./...
+	touch .test
+
+test: .test  ## Run tests
