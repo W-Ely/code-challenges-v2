@@ -5,21 +5,3 @@ RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 
 RUN apk --update add python3
-
-
-# RUN set -x && \
-#     cd /home/alpine && \
-#     git clone https://github.com/pyenv/pyenv.git /home/alpine/.pyenv && \
-#     cd /home/alpine/.pyenv && \
-#     git branch pyenv-1.2.20 v1.2.20 && \
-#     git checkout pyenv-1.2.20 && \
-#     cd /home/alpine && \
-#     git clone https://github.com/pyenv/pyenv-virtualenv.git /home/alpine/.pyenv/plugins/pyenv-virtualenv && \
-#     cd /home/alpine/.pyenv/plugins/pyenv-virtualenv && \
-#     git branch virtualenv-1.1.5 v1.1.5 && \
-#     git checkout virtualenv-1.1.5 && \
-#     cd /home/alpine && \
-#     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> /home/alpine/.profile && \
-#     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> /home/alpine/.profile && \
-#     echo 'eval "$(pyenv init -)"' >> /home/alpine/.profile && \
-#     echo 'eval "$(pyenv virtualenv-init -)"' >> /home/alpine/.profile
