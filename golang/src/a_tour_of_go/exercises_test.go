@@ -39,3 +39,15 @@ func testWordCount(t *testing.T) {
 			" actual map[string]int (%v)", expected, actual)
 	}
 }
+
+func testFibonacci(t *testing.T) {
+	f := Fibonacci()
+	for _, v := range []int{0, 1, 1, 2, 3, 5, 8, 13, 21, 34} {
+		actual := f()
+		expected := v
+		if actual != expected {
+			t.Errorf("Expected int (%v) is not same as"+
+				" actual int (%v)", expected, actual)
+		}
+	}
+}

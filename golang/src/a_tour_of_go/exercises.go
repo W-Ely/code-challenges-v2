@@ -106,8 +106,30 @@ func WordCount(s string) map[string]int {
 	return wc
 }
 
+/*
+Exercise: Fibonacci closure
+Let's have some fun with functions.
+
+Implement a fibonacci function that returns a function (a closure) that
+returns successive fibonacci numbers (0, 1, 1, 2, 3, 5, ...).
+*/
+
+func Fibonacci() func() int {
+	fib := 0
+	next := 1
+	return func() int {
+		result := fib
+		fib, next = next, fib+next
+		return result
+	}
+}
+
 func main() {
 	fmt.Println(Sqrt(8000))
 	pic.Show(Pic)
 	wc.Test(WordCount)
+	f := Fibonacci()
+	for i := 0; i < 10; i++ {
+		fmt.Println(f())
+	}
 }
