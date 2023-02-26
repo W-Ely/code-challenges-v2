@@ -1,4 +1,4 @@
-.PHONY=help clean code lint test dev
+.PHONY=help clean test tour
 
 src-directory := src
 src-files := $(shell find $(src-directory) -name '*.go')
@@ -18,3 +18,7 @@ clean: ## clean dev artifacts
 	touch .test
 
 test: .test  ## Run tests
+
+tour:
+	go install golang.org/x/website/tour@latest
+	go run golang.org/x/website/tour@latest

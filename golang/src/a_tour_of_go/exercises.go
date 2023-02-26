@@ -1,9 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"math"
+	"strings"
 
 	"golang.org/x/tour/pic"
+	"golang.org/x/tour/wc"
 )
 
 /*
@@ -85,7 +88,26 @@ func Pic(dx, dy int) [][]uint8 {
 	return s
 }
 
+/*
+Exercise: Maps
+Implement WordCount. It should return a map of the counts of each
+“word” in the string s. The wc.Test function runs a test suite against
+the provided function and prints success or failure.
+
+You might find strings.Fields helpful.
+*/
+func WordCount(s string) map[string]int {
+	wc := make(map[string]int)
+	ws := strings.Fields(s)
+	for _, w := range ws {
+		wc[w] += 1
+	}
+
+	return wc
+}
+
 func main() {
-	// fmt.Println(Sqrt(8000))
+	fmt.Println(Sqrt(8000))
 	pic.Show(Pic)
+	wc.Test(WordCount)
 }

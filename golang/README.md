@@ -4,6 +4,12 @@ A new collection of my personal solutions to various code challenges.
 
 ### Setup
 
+To run the golang tour within the dev container, run:
+
+```sh
+make tour
+```
+
 ### Testing
 
 ```sh
