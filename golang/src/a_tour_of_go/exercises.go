@@ -76,9 +76,9 @@ The choice of image is up to you. Interesting functions include
 
 func Pic(dx, dy int) [][]uint8 {
 	s := make([][]uint8, dy)
-	for i, _ := range s {
+	for i := range s {
 		s[i] = make([]uint8, dx)
-		for j, _ := range s[i] {
+		for j := range s[i] {
 			s[i][j] = uint8(math.Pow(float64(i), float64(j)))
 		}
 	}
