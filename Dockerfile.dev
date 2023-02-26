@@ -1,7 +1,7 @@
 FROM golang:1.20.1-alpine AS base
 RUN go install -v golang.org/x/tools/gopls@latest
 RUN apk add git make
+RUN apk --update add python3
 RUN curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 
-RUN apk --update add python3

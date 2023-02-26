@@ -37,3 +37,4 @@ If all is configured correctly linting should happen automatically in the dev co
 - [Practical Go: Real world advice for writing maintainable Go programs](https://dave.cheney.net/practical-go/presentations/qcon-china.html)
 - [Go Work File](https://go.dev/ref/mod#go-work-file)
 - [Unit testing Stdout in Go](https://dev.to/lucassha/unit-testing-stdout-in-go-1jd)
+- [When to use pointers in Go](https://medium.com/@meeusdylan/when-to-use-pointers-in-go-44c15fe04eac)
