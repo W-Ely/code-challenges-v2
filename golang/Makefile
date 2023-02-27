@@ -14,7 +14,7 @@ clean: ## clean dev artifacts
 
 
 .test: $(src-files) $(test-files) Makefile
-	go test ./...
+	go test -cover ./...
 	touch .test
 
 test: .test  ## Run tests

@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bytes"
+	"fmt"
 	"math"
 	"reflect"
 	"testing"
 )
 
-func testSqrt(t *testing.T) {
+func TestSqrt(t *testing.T) {
 	actual := Sqrt(100)
 	expected := 10.0
 	if actual != expected {
@@ -15,7 +17,7 @@ func testSqrt(t *testing.T) {
 	}
 }
 
-func testPic(t *testing.T) {
+func TestPic(t *testing.T) {
 	pic := Pic(10, 10)
 	for i := range make([]int, 10) {
 		for j := range make([]int, 10) {
@@ -29,7 +31,7 @@ func testPic(t *testing.T) {
 	}
 }
 
-func testWordCount(t *testing.T) {
+func TestWordCount(t *testing.T) {
 	s := "a b b c c c"
 	actual := WordCount(s)
 	expected := map[string]int{"a": 1, "b": 2, "c": 3}
@@ -40,7 +42,7 @@ func testWordCount(t *testing.T) {
 	}
 }
 
-func testFibonacci(t *testing.T) {
+func TestFibonacci(t *testing.T) {
 	f := Fibonacci()
 	for _, v := range []int{0, 1, 1, 2, 3, 5, 8, 13, 21, 34} {
 		actual := f()
@@ -49,5 +51,15 @@ func testFibonacci(t *testing.T) {
 			t.Errorf("Expected int (%v) is not same as"+
 				" actual int (%v)", expected, actual)
 		}
+	}
+}
+
+func TestIPAddrStringer(t *testing.T) {
+	ip := IPAddr{1, 1, 1, 1}
+	var output bytes.Buffer
+	fmt.Fprintf(&output, "%v", ip)
+	expected := "1.1.1.1"
+	if expected != output.String() {
+		t.Errorf("got %s but expected %s", output.String(), expected)
 	}
 }

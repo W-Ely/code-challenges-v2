@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func testHello(t *testing.T) {
+func TestHello(t *testing.T) {
 	var output bytes.Buffer
 	Hello(&output)
 	expected := "Hello, 世界"
