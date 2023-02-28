@@ -6,11 +6,11 @@ import (
 	"strings"
 
 	"golang.org/x/tour/pic"
+	"golang.org/x/tour/reader"
 	"golang.org/x/tour/wc"
 )
 
-/*
-Exercise: Loops and Functions
+/* Exercise: Loops and Functions
 
 As a way to play with functions and loops, let's implement a
 square root function: given a number x, we want to find the
@@ -62,8 +62,7 @@ func Sqrt(x float64) float64 {
 	return z
 }
 
-/*
-Exercise: Slices
+/* Exercise: Slices
 Implement Pic. It should return a slice of length dy, each element of
 which is a slice of dx 8-bit unsigned integers. When you run the program,
 it will display your picture, interpreting the integers as grayscale
@@ -89,7 +88,8 @@ func Pic(dx, dy int) [][]uint8 {
 }
 
 /*
-Exercise: Maps
+	Exercise: Maps
+
 Implement WordCount. It should return a map of the counts of each
 “word” in the string s. The wc.Test function runs a test suite against
 the provided function and prints success or failure.
@@ -106,8 +106,7 @@ func WordCount(s string) map[string]int {
 	return wc
 }
 
-/*
-Exercise: Fibonacci closure
+/* Exercise: Fibonacci closure
 Let's have some fun with functions.
 
 Implement a fibonacci function that returns a function (a closure) that
@@ -124,8 +123,7 @@ func Fibonacci() func() int {
 	}
 }
 
-/*
-Exercise: Stringers
+/* Exercise: Stringers
 
 Make the IPAddr type implement fmt.Stringer to print the address as a dotted quad.
 
@@ -139,7 +137,8 @@ func (ip IPAddr) String() string {
 }
 
 /*
-Exercise: Errors
+	Exercise: Errors
+
 Copy your Sqrt function from the earlier exercise and modify it to return
 an error value.
 
@@ -180,6 +179,23 @@ func Sqrt2(x float64) (float64, error) {
 	return z, nil
 }
 
+/* Exercise: Readers
+Implement a Reader type that emits an infinite stream of the ASCII character 'A'.
+*/
+
+type MyReader struct{}
+
+// TODO: Add a Read([]byte) (int, error) method to MyReader.
+
+func (r MyReader) Read(b []byte) (int, error) {
+	count := 0
+	for i := range b {
+		b[i] = 65
+		count += 1
+	}
+	return count, nil
+}
+
 func main() {
 	fmt.Println(Sqrt(8000))
 	pic.Show(Pic)
@@ -197,4 +213,5 @@ func main() {
 	}
 	fmt.Println(Sqrt2(2))
 	fmt.Println(Sqrt2(-2))
+	reader.Validate(MyReader{})
 }

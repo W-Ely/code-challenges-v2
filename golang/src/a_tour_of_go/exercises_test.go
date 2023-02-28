@@ -75,8 +75,23 @@ func TestSqrt2(t *testing.T) {
 			" actual Float (%f)", expected, actual)
 	}
 	actual, err = Sqrt2(-100)
-	expected_err := "cannot Sqrt negative number: -100"
+	expected_err := ErrNegativeSqrt(-100)
 	if err == nil {
 		t.Errorf("Expected Error (%v) but got error %v", expected_err, actual)
+	}
+}
+
+func TestMyReader(t *testing.T) {
+	b := make([]byte, 8)
+	r := MyReader{}
+	i := 0
+	for i <= 24 {
+		n, _ := r.Read(b)
+		for j, v := range b[:n] {
+			if v != 'A' {
+				t.Errorf("Expected 'A' but got error %v", v)
+			}
+			i += j
+		}
 	}
 }
