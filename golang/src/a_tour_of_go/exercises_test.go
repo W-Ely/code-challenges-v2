@@ -63,3 +63,20 @@ func TestIPAddrStringer(t *testing.T) {
 		t.Errorf("got %s but expected %s", output.String(), expected)
 	}
 }
+
+func TestSqrt2(t *testing.T) {
+	actual, err := Sqrt2(100)
+	expected := 10.0
+	if err != nil {
+		t.Errorf("Expected Float (%f) but got Error (%v)", expected, err)
+	}
+	if actual != expected {
+		t.Errorf("Expected Float (%f) is not same as"+
+			" actual Float (%f)", expected, actual)
+	}
+	actual, err = Sqrt2(-100)
+	expected_err := "cannot Sqrt negative number: -100"
+	if err == nil {
+		t.Errorf("Expected Error (%v) but got error %v", expected_err, actual)
+	}
+}

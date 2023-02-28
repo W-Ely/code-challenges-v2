@@ -138,6 +138,48 @@ func (ip IPAddr) String() string {
 	return fmt.Sprintf("%d.%d.%d.%d", ip[0], ip[1], ip[2], ip[3])
 }
 
+/*
+Exercise: Errors
+Copy your Sqrt function from the earlier exercise and modify it to return
+an error value.
+
+Sqrt should return a non-nil error value when given a negative number, as
+it doesn't support complex numbers.
+
+# Create a new type
+
+type ErrNegativeSqrt float64
+and make it an error by giving it a
+
+func (e ErrNegativeSqrt) Error() string
+method such that ErrNegativeSqrt(-2).Error() returns "cannot Sqrt negative
+number: -2".
+
+Note: A call to fmt.Sprint(e) inside the Error method will send the program
+into an infinite loop. You can avoid this by converting e
+first: fmt.Sprint(float64(e)). Why?
+
+Change your Sqrt function to return an ErrNegativeSqrt value when given a
+negative number.
+*/
+type ErrNegativeSqrt float64
+
+func (e ErrNegativeSqrt) Error() string {
+	return fmt.Sprintf("cannot Sqrt negative number: %v", fmt.Sprint(float64(e)))
+}
+
+func Sqrt2(x float64) (float64, error) {
+	if x < 0 {
+		return 0, ErrNegativeSqrt(x)
+	}
+	z := 1.0
+	maxDiff := 0.0000000001
+	for !(math.Abs(x-z*z) <= maxDiff) {
+		z -= (z*z - x) / (2 * z)
+	}
+	return z, nil
+}
+
 func main() {
 	fmt.Println(Sqrt(8000))
 	pic.Show(Pic)
@@ -153,4 +195,6 @@ func main() {
 	for name, ip := range hosts {
 		fmt.Printf("%v: %v\n", name, ip)
 	}
+	fmt.Println(Sqrt2(2))
+	fmt.Println(Sqrt2(-2))
 }
