@@ -1,47 +1,37 @@
 # Code Challenges
-A new collection of my personal solutions to various code challenges.
-### Setup
-This repo implements solutions in Python 3.10+.  It's recommended to run and install dependencies from a virtual environment.
 
-After cloning this repo, to install dev dependencies: 
+A new collection of my personal solutions to various code challenges.
+
+### Setup
+
+This repo implements solutions in Python 3.10+. It's recommended to run and install dependencies from a virtual environment.
+
+After cloning this repo, to install dev dependencies:
+
 ```sh
 make dev
 ```
-or if Python 3 is not your default.
-```sh
-python3 -m venv .venv
-```
 
-Then activate the virtual environment.
-```sh
-. ./.venv/bin/activate
-```
-Next install the dependencies:
-```sh
-pip install -r requirements.txt
-```
 ### Testing
+
 Tests are setup to run with Pythons builtin unittest library.
+
 ```sh
-python -m unittest
+make test
 ```
 
 ### Linting
+
+If all is configured correctly linting should happen automatically in the dev container. Future work will include a make recipe.
+
 - Autoformating is handled with [black](https://pypi.org/project/black/)
-```sh
-black src tests
-```
 - Linting by [pylint](https://pypi.org/project/pylint/)
-```sh
-pylint src tests
-```
 - Import arrangment by [isort](https://pypi.org/project/isort/)
-```sh
-isort src tests
-```
 
 ### Challenges
+
 #### Code Wars
+
 - - Challenge: [Stargate SG-1: Cute and Fuzzy](https://www.codewars.com/kata/59669eba1b229e32a300001a/train/python)
   - Location: [./src/code_wars/sg1.py](./src/code_wars/sg1.py)
   - Strategy: Create a graph and use a breadth first search to find a possible route.
@@ -64,7 +54,9 @@ isort src tests
     - [Travelling_salesman_problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 - - Challenge: [Range Extraction](https://www.codewars.com/kata/51ba717bb08c1cd60f00002f)
   - Location: [./src/code_wars/range_extraction.py](./src/code_wars/range_extraction.py)
+
 #### Codecademy
+
 - - Challenge: [The Knapsack Problem](https://www.codecademy.com/code-challenges/code-challenge-knapsack-problem-python)
   - Location: [./src/codecademy/the_knapsack_problem.py](./src/codecademy/the_knapsack_problem.py)
   - Resources:
@@ -72,16 +64,26 @@ isort src tests
     - [Wikipedia - Knapsack Problem](https://en.wikipedia.org/wiki/Knapsack_problem)
     - [Geeks for Geeks - Dynamic Programming](https://www.geeksforgeeks.org/dynamic-programming/)
     - [Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People, Chapter 9](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
+
 #### LeetCode
+
 - - Challenge: [zigzag-conversion](https://leetcode.com/problems/zigzag-conversion/description/)
   - Location: [./src/code_wars/zigzag_conversion.py](./src/leet code/zigzag_conversion.py)
 - - Challenge: [Min Window Substring](https://leetcode.com/problems/minimum-window-substring/)
   - Location: [./src/leet_code/min_window_substring.py](./src/leet_code/min_window_substring.py)
+
 #### edabit
+
 - - Challenge: [Minesweeper I — Grid](https://edabit.com/challenge/voZCqTGMSNjCrRhf9)
   - Location: [./src/edabit/minesweeper_i_grid.py](./src/edabit/minesweeper_i_grid.py)
 - - Challenge: [Longest Alternating Substring](https://edabit.com/challenge/RB6iWFrCd6rXWH3vi)
   - Location: [./src/edabit/longest_alternating_substring.py](./src/edabit/longest_alternating_substring.py)
+
 ### Notes
+
 - The [union](https://docs.python.org/3/whatsnew/3.10.html) `|` operator to merge dictionaries returning a new was introduced in Python 3.10
 - The [walrus](https://docs.python.org/3/whatsnew/3.8.html) `:=` operator was introduced in Python 3.8.
+
+### Resources
+
+- [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)

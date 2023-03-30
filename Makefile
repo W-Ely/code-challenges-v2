@@ -13,3 +13,4 @@ dev:  ## Setup dev environment
 
 test:  ## Run tests
 	cd python && $(MAKE) test
+	cd golang && $(MAKE) test
