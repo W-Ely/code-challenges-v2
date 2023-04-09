@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"math"
+	"os"
 	"strings"
 
 	"golang.org/x/tour/pic"
@@ -196,14 +198,50 @@ func (r MyReader) Read(b []byte) (int, error) {
 	return count, nil
 }
 
+/* Exercise: rot13Reader
+A common pattern is an io.Reader that wraps another io.Reader, modifying
+the stream in some way.
+
+For example, the gzip.NewReader function takes an io.Reader (a stream of
+	compressed data) and returns a *gzip.Reader that also implements io.Reader
+	(a stream of the decompressed data).
+
+Implement a rot13Reader that implements io.Reader and reads from an io.Reader,
+modifying the stream by applying the rot13 substitution cipher to all
+alphabetical characters.
+
+The rot13Reader type is provided for you. Make it an io.Reader by implementing
+its Read method.
+*/
+
+type rot13Reader struct {
+	r io.Reader
+}
+
+func (r13 *rot13Reader) Read(b []byte) (int, error) {
+	n, err := r13.r.Read(b)
+	for i := 0; i <= n; i++ {
+		if (b[i] >= 65 && b[i] <= 77) || (b[i] >= 97 && b[i] <= 109) {
+			b[i] = b[i] + 13
+		} else if (b[i] >= 78 && b[i] <= 90) || (b[i] >= 110 && b[i] <= 122) {
+			b[i] = b[i] - 13
+		}
+	}
+	return n, err
+}
+
 func main() {
 	fmt.Println(Sqrt(8000))
+
 	pic.Show(Pic)
+
 	wc.Test(WordCount)
+
 	f := Fibonacci()
 	for i := 0; i < 10; i++ {
 		fmt.Println(f())
 	}
+
 	hosts := map[string]IPAddr{
 		"loopback":  {127, 0, 0, 1},
 		"googleDNS": {8, 8, 8, 8},
@@ -211,7 +249,13 @@ func main() {
 	for name, ip := range hosts {
 		fmt.Printf("%v: %v\n", name, ip)
 	}
+
 	fmt.Println(Sqrt2(2))
 	fmt.Println(Sqrt2(-2))
+
 	reader.Validate(MyReader{})
+
+	s := strings.NewReader("Lbh penpxrq gur pbqr!")
+	r := rot13Reader{s}
+	io.Copy(os.Stdout, &r)
 }
