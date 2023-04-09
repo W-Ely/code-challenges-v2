@@ -3,8 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"io/ioutil"
 	"math"
 	"reflect"
+	"strings"
 	"testing"
 )
 
@@ -93,5 +95,15 @@ func TestMyReader(t *testing.T) {
 			}
 			i += j
 		}
+	}
+}
+
+func TestRot13Reader(t *testing.T) {
+	s := strings.NewReader("Lbh penpxrq gur pbqr!")
+	expected := "You cracked the code!"
+	r := Rot13Reader{s}
+	actual, _ := ioutil.ReadAll(&r)
+	if string(actual) != expected {
+		t.Errorf("got %s but expected %s", actual, expected)
 	}
 }

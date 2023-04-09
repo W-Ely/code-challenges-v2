@@ -214,11 +214,11 @@ The rot13Reader type is provided for you. Make it an io.Reader by implementing
 its Read method.
 */
 
-type rot13Reader struct {
+type Rot13Reader struct {
 	r io.Reader
 }
 
-func (r13 *rot13Reader) Read(b []byte) (int, error) {
+func (r13 *Rot13Reader) Read(b []byte) (int, error) {
 	n, err := r13.r.Read(b)
 	for i := 0; i <= n; i++ {
 		if (b[i] >= 65 && b[i] <= 77) || (b[i] >= 97 && b[i] <= 109) {
@@ -256,6 +256,6 @@ func main() {
 	reader.Validate(MyReader{})
 
 	s := strings.NewReader("Lbh penpxrq gur pbqr!")
-	r := rot13Reader{s}
+	r := Rot13Reader{s}
 	io.Copy(os.Stdout, &r)
 }
